@@ -33,21 +33,43 @@ const ProfileInfo = ({ profile }) => {
 
   return (
     <div className="search__profile">
-      <a href={profile.html_url} target="_blank">
+      <a className="search__link" href={profile.html_url} target="_blank">
         <img className="search__img" src={avatar} alt="" />
       </a>
       <ul className="search__list">
-        <li className="search__item">{`Имя: ${name}`}</li>
-        <li className="search__item">{`Логин: ${profile.login}`}</li>
-        <li className="search__item">{`Местонахождение: ${location}`}</li>
         <li className="search__item">
+          <span className="search__span">Имя:</span>
+          {`${name}`}
+        </li>
+        <li className="search__item">
+          <span className="search__span">Логин:</span>
+          {`${profile.login}`}
+        </li>
+        <li className="search__item">
+          <span className="search__span">Местонахождение:</span>
+          {`${location}`}
+        </li>
+        <li className="search__item">
+          <span className="search__span">Репозиториев:</span>
+          {`${profile.public_repos}`}
+        </li>
+        <li className="search__item">
+          <span className="search__span">Подписички:</span>
+          {`${profile.followers}`}
+        </li>
+        <li className="search__item">
+          <span className="search__span">Дата создания:</span>
+          {`${dateCreate}`}
+        </li>
+        <li className="search__item">
+          <span className="search__span">Последнее обновление:</span>
+          {`${dateUpdate}`}
+        </li>
+        <li className="search__item search__item_link">
           <Link to={`/repos/${profile.login}`}>
-            {`Количество репозиториев: ${profile.public_repos}`}
+            <button>перейти к репозиториям</button>
           </Link>
         </li>
-        <li className="search__item">{`Подписички: ${profile.followers}`}</li>
-        <li className="search__item">{`Дата создания: ${dateCreate}`}</li>
-        <li className="search__item">{`Последнее обновление: ${dateUpdate}`}</li>
       </ul>
     </div>
   );

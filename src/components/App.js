@@ -3,10 +3,13 @@ import "../stylessheets/index.css";
 import { Route, Switch } from "react-router-dom";
 import Search from "./Pages/Search";
 import Repos from "./Pages/Repos";
+import Header from "./Header/Header";
 
 function App() {
   return (
-    <div className="App">
+    <>
+      <Header />
+
       <Switch>
         <Route exact path="/">
           <Search />
@@ -16,7 +19,7 @@ function App() {
           <Repos />
         </Route>
       </Switch>
-    </div>
+    </>
   );
 }
 

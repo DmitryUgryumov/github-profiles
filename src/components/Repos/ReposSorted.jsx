@@ -6,16 +6,12 @@ const sorted = [
   {
     id: 0,
     description: "по названию",
-    // sortFunction: (arr) => arr.sort((a, b) => a.name > b.name),
     sortFunction: (arr) =>
       arr.sort((a, b) => {
         let nameA = a.name.toLowerCase();
         let nameB = b.name.toLowerCase();
 
-        if (nameA < nameB) return -1;
-        if (nameA > nameB) return 1;
-
-        return 0;
+        return nameA > nameB ? 1 : -1;
       }),
     checked: true,
   },
@@ -23,21 +19,21 @@ const sorted = [
     id: 1,
     description: "по дате создания",
     sortFunction: (arr) =>
-      arr.sort((a, b) => Date.parse(a.created_at) - Date.parse(b.created_at)),
+      arr.sort((a, b) => Date.parse(b.created_at) - Date.parse(a.created_at)),
     checked: false,
   },
   {
     id: 2,
     description: "по дате последнего обновления",
     sortFunction: (arr) =>
-      arr.sort((a, b) => Date.parse(a.updated_at) - Date.parse(b.updated_at)),
+      // arr.sort((a, b) => Date.parse(a.updated_at) - Date.parse(b.updated_at)),
+      arr.sort((a, b) => Date.parse(b.updated_at) - Date.parse(a.updated_at)),
     checked: false,
   },
   {
     id: 3,
     description: "по размеру репозитроия",
-    sortFunction: (arr) =>
-      arr.sort((a, b) => Date.parse(a.size) - Date.parse(b.size)),
+    sortFunction: (arr) => arr.sort((a, b) => b.size - a.size),
     checked: false,
   },
 ];

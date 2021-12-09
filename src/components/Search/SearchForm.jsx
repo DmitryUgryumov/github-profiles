@@ -37,6 +37,7 @@ const SearchForm = () => {
     <form className="search__form " onSubmit={formHandler}>
       <input
         className="search__input"
+        placeholder="введите логин пользователя"
         type="text"
         value={inputValue}
         onChange={inputHandler}
