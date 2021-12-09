@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.search {
+  max-width: 1080px;
+  margin: 30px auto 0;
+
+  &__form {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__profile {
+    width: 60%;
+    margin: 30px auto 0;
+    display: flex;
+    border: 1px black solid;
+  }
+
+  &__img {
+    //border-radius: 50%;
+    align-self: center;
+    width: 200px;
+    height: auto;
+  }
+
+  &__list {
+    margin-left: 30px;
+    //border: 1px blue solid;
+    width: 100%;
+  }
+
+  &__item + &__item {
+    margin-top: 20px;
+  }
+}
+
+
+.repos {
+  margin-top: 30px;
+
+  &__item + &__item{
+    //margin-top: 30px;
+  }
+
+  &__item {
+    padding: 35px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px grey solid;
+    border-bottom: none;
+  }
+
+  &__item:last-child {
+    border: 1px gray solid;
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 24px;
+  }
+}

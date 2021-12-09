@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+.search {
+  max-width: 1080px;
+  margin: 30px auto 0;
+}
+.search__form {
+  display: flex;
+  justify-content: center;
+}
+.search__profile {
+  width: 60%;
+  margin: 30px auto 0;
+  display: flex;
+  border: 1px black solid;
+}
+.search__img {
+  align-self: center;
+  width: 200px;
+  height: auto;
+}
+.search__list {
+  margin-left: 30px;
+  width: 100%;
+}
+.search__item + .search__item {
+  margin-top: 20px;
+}
+
+.repos {
+  margin-top: 30px;
+}
+.repos__item {
+  padding: 35px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px grey solid;
+  border-bottom: none;
+}
+.repos__item:last-child {
+  border: 1px gray solid;
+}
+.repos__title {
+  text-align: center;
+  font-size: 24px;
+}
+
+/*# sourceMappingURL=index.css.map */
