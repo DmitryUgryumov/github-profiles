@@ -10,8 +10,8 @@ const Header = () => {
     //ИЗМЕНИТЬ!!!
     setTimeout(() => {
       document.body.style.transition = "color 1s, background-color 1s";
-      document.querySelector(".search__input").style.transition =
-        "background-color .5s";
+      // document.querySelector(".search__input").style.transition =
+      //   "background-color .5s";
     }, 1000);
   }, []);
 

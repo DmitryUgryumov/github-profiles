@@ -4,9 +4,9 @@
 $color-black: #000000FF;
 $color-dark: #1f1f1f;
 $color-gray: #808080FF;
+$color-light-gray: #e8e3e3;
 $color-white-dark: #DCDCDC;
 $color-white: #FFFF;
-
 
 * {
   margin: 0;
@@ -20,27 +20,38 @@ $color-white: #FFFF;
     cursor: pointer;
     padding: 7px 5px;
     border-radius: 3px;
-    font-size: 14px;
+    font-size: 16px;
     border: none;
   }
 
   input {
+    font-size: 16px;
     border: none;
     outline: none;
   }
 }
 
-body{
-  //transition: all 1s;
-}
-
 body.dark {
   color: $color-white;
   background: $color-dark;
+
   button {
     color: $color-white;
     background: $color-black;
     border: none;
+  }
+
+  .error {
+    color: #DC143C;
+  }
+
+  .loader {
+    .lds-ring {
+      div {
+        border: 8px solid $color-white;
+        border-color: $color-white transparent transparent transparent;
+      }
+    }
   }
 
   .header {
@@ -54,7 +65,7 @@ body.dark {
 
   .search {
     &__input {
-      background: $color-gray;
+      background: $color-black;
       color: $color-white;
 
       &::placeholder {
@@ -77,10 +88,93 @@ body.dark {
   }
 
   .search__profile {
-    border: 1px $color-white-dark solid;
+    border: 1px $color-gray solid;
+  }
+
+  .sorting__select {
+    color: $color-white;
+    background: $color-dark;
+  }
+
+  .repos__title {
+    a {
+      color: $color-white;
+    }
   }
 }
 
+body.light {
+  color: $color-black;
+  background: $color-white;
+
+  button {
+    background: $color-light-gray;
+    border: none;
+  }
+
+  .error {
+    color: darkred;
+  }
+
+  .loader {
+    .lds-ring {
+      div {
+        border: 8px solid $color-black;
+        border-color: $color-black transparent transparent transparent;
+      }
+    }
+  }
+
+  .header {
+    background: $color-light-gray;
+  }
+
+  .header__circle{
+    background: $color-black;
+    transition: all 1s;
+  }
+
+  .search {
+    &__input {
+      background: $color-light-gray;
+
+      &::placeholder {
+        color: $color-dark;
+      }
+
+      &:focus {
+        background: $color-gray;
+        color: $color-black;
+
+        &::placeholder {
+          color:$color-black;
+        }
+      }
+    }
+  }
+
+  .search__profile {
+    border: 1px $color-dark solid;
+  }
+
+  .sorting__select {
+    color: $color-black;
+    background: $color-white;
+  }
+
+  .repos__title {
+    a {
+      color: $color-black;
+    }
+  }
+}
+
+.error, .no-rep {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 32px;
+  font-weight: 300;
+}
 
 .header {
   width: 100%;
@@ -105,7 +199,7 @@ body.dark {
   }
 
   &__circle_active {
-    background: $color-black;
+    //background: $color-black;
     left:100%;
     margin-left: -20px;
   }
@@ -119,7 +213,6 @@ body.dark {
   align-items: center;
   padding: 10px;
 }
-
 
 .search {
   max-width: 1080px;
@@ -137,10 +230,11 @@ body.dark {
   &__input {
     border: none;
     width: 30%;
-    padding: 4px 5px;
+    padding: 6px 5px;
     //transition: background-color .5s;
     outline: none;
     font-size: 18px;
+
   }
 
   &__button {
@@ -187,13 +281,8 @@ body.dark {
   }
 }
 
-
 .repos {
   margin-top: 30px;
-
-  &__item + &__item{
-    //margin-top: 30px;
-  }
 
   &__item {
     padding: 35px 20px;
@@ -210,5 +299,89 @@ body.dark {
   &__title {
     text-align: center;
     font-size: 24px;
+    font-weight: 400;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__info + &__info {
+    margin-top: 7px;
+  }
+
+  &__info {
+    font-size: 22px;
+    font-weight: 300;
+
+    span {
+      font-weight: 400;
+      padding-right: 7px;
+      font-size: 20px;
+    }
   }
 }
+
+.sorting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+
+  &__title {
+    padding-right: 30px;
+  }
+
+  &__select {
+    padding: 10px 5px;
+    font-size: 16px;
+  }
+}
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -40px;
+  margin-left: -40px;
+
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring {
+    div {
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      width: 64px;
+      height: 64px;
+      margin: 8px;
+      border-radius: 50%;
+      animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    }
+
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+}
+
+

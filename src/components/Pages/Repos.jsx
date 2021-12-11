@@ -8,6 +8,7 @@ import {
   searchRepos,
 } from "../../redux/repos/reposActions";
 import ReposList from "../Repos/ReposList";
+import PageLoader from "../UI/Loaders/PageLoader";
 
 const Repos = () => {
   const { login } = useParams();
@@ -31,9 +32,9 @@ const Repos = () => {
   }, []);
 
   if (error) {
-    return <div>{`Пользователь "${login}" не найден`}</div>;
+    return <h2 className="error">{`Пользователь "${login}" не найден`}</h2>;
   } else if (loading) {
-    return <h1>Loading...</h1>;
+    return <PageLoader />;
   }
 
   return (

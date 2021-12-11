@@ -26,19 +26,35 @@ const calcDate = (d) => {
 const ReposItem = ({ rep }) => {
   const dateCreate = calcDate(rep.created_at);
   const dateUpdate = calcDate(rep.updated_at);
+  const hasPages = rep.has_pages ? "+" : "-";
+  const language = rep.language || "-";
+
+  console.log(rep);
 
   return (
     <li className="repos__item">
-      <p className="repos__title">
+      <h2 className="repos__title">
         <a href={rep.svn_url} target="_blank">
           {rep.name}
         </a>
+      </h2>
+      <p className="repos__info">
+        <span>Создан: </span>
+        {dateCreate}
       </p>
-      <p>{`Создан: ${dateCreate}`}</p>
-      <p>{`Последнее обновление: ${dateUpdate}`}</p>
-      <p>{`Язык: ${rep.language}`}</p>
-      <p>{`Размер репозитория: ${rep.size}`}</p>
-      <p>{`GitHub pages: ${rep.has_pages}`}</p>
+
+      <p className="repos__info">
+        <span>Язык: </span>
+        {language}
+      </p>
+      <p className="repos__info">
+        <span>Размер репозитория: </span>
+        {rep.size}
+      </p>
+      <p className="repos__info">
+        <span>GitHub pages: </span>
+        {hasPages}
+      </p>
     </li>
   );
 };

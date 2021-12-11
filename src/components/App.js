@@ -1,5 +1,5 @@
 import React from "react";
-import "../stylessheets/index.css";
+import "../stylesheets/index.css";
 import { Route, Switch } from "react-router-dom";
 import Search from "./Pages/Search";
 import Repos from "./Pages/Repos";

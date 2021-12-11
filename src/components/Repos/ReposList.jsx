@@ -22,7 +22,9 @@ const ReposList = () => {
     );
   }
 
-  return <p>{`У пользователя "${login}" нет репозиториев`}</p>;
+  return (
+    <h2 className="no-rep">{`У пользователя "${login}" нет репозиториев`}</h2>
+  );
 };
 
 export default ReposList;

@@ -67,7 +67,7 @@ const ProfileInfo = ({ profile }) => {
         </li>
         <li className="search__item search__item_link">
           <Link to={`/repos/${profile.login}`}>
-            <button>перейти к репозиториям</button>
+            <button>Перейти к репозиториям</button>
           </Link>
         </li>
       </ul>

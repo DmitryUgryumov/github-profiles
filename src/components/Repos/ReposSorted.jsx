@@ -65,13 +65,20 @@ const ReposSorted = () => {
   };
 
   return (
-    <select value={activeSort.description} onChange={optionHandler}>
-      {sorting.map((sort) => (
-        <option key={sort.id} value={sort.description}>
-          {sort.description}
-        </option>
-      ))}
-    </select>
+    <div className="sorting">
+      <h2 className="sorting__title">Сортировать по</h2>
+      <select
+        className="sorting__select"
+        value={activeSort.description}
+        onChange={optionHandler}
+      >
+        {sorting.map((sort) => (
+          <option key={sort.id} value={sort.description}>
+            {sort.description}
+          </option>
+        ))}
+      </select>
+    </div>
   );
 };
 

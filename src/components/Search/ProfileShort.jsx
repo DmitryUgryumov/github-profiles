@@ -1,19 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import ProfileInfo from "./ProfileInfo";
+import PageLoader from "../UI/Loaders/PageLoader";
 
 const ProfileShort = () => {
-  const profileName = useSelector((state) => state.search.value);
   const profile = useSelector((state) => state.search.profile);
   const loading = useSelector((state) => state.search.loading);
-  const error = useSelector((state) => state.search.error);
+  const errorLogin = useSelector((state) => state.search.error);
 
   if (loading) {
-    return <h1>Loading...</h1>;
+    return <PageLoader />;
   }
 
-  if (error) {
-    return <h1>{`${error} не найден`}</h1>;
+  if (errorLogin) {
+    return <h2 className="error">{`"${errorLogin}" не найден`}</h2>;
   }
 
   if (Object.keys(profile).length) {
