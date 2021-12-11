@@ -283,6 +283,7 @@ body.light {
 
 .repos {
   margin-top: 30px;
+  padding: 0 20px;
 
   &__item {
     padding: 35px 20px;
@@ -300,6 +301,7 @@ body.light {
     text-align: center;
     font-size: 24px;
     font-weight: 400;
+    margin-bottom: 10px;
 
     a {
       text-decoration: none;
@@ -327,6 +329,7 @@ body.light {
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  padding: 0 20px;
 
   &__title {
     padding-right: 30px;
@@ -384,4 +387,69 @@ body.light {
 
 }
 
+
+@media(max-width: 980px) {
+  .search {
+    &__profile {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 60%;
+      border: none;
+    }
+
+    &__link {
+      align-self: center;
+    }
+
+    &__list {
+      margin-top: 10px;
+      //font-size: 18px;
+    }
+
+    &__span {
+      //font-size: 16px;
+    }
+  }
+}
+
+@media (max-width: 580px) {
+  body.light, body.dark {
+    .search__profile {
+      border: none;
+    }
+  }
+
+  .search {
+    &__item + &__item {
+      margin-top: 10px;
+    }
+
+    &__item:last-child {
+      margin-top: 15px;
+      justify-content: center;
+    }
+  }
+
+  .sorting {
+    flex-direction: column;
+
+    &__select {
+      margin-top: 10px;
+    }
+
+
+  }
+
+  .repos {
+    &__info {
+      font-size: 20px;
+
+      span {
+        padding-right: 5px;
+        font-size: 18px;
+      }
+    }
+  }
+}
 
