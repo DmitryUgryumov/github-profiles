@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import {
@@ -12,6 +12,12 @@ const SearchForm = () => {
   const dispatch = useDispatch();
   const inputValue = useSelector((state) => state.search.value);
   const error = useSelector((state) => state.search.error);
+
+  useEffect(() => {
+    return () => {
+      clearState();
+    };
+  }, []);
 
   const getProfile = (e) => {
     e.preventDefault();

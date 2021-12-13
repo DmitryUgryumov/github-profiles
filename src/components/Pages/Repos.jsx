@@ -30,7 +30,7 @@ const Repos = () => {
     return function () {
       dispatch(clearReposState());
     };
-  }, []);
+  }, [login]);
 
   if (error) {
     return <h2 className="error">{`Пользователь "${login}" не найден`}</h2>;

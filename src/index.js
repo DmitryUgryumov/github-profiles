@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { applyMiddleware, compose, createStore } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
@@ -18,9 +18,9 @@ const store = createStore(
 
 const app = (
   <Provider store={store}>
-    <Router>
+    <HashRouter basename="/">
       <App />
-    </Router>
+    </HashRouter>
   </Provider>
 );
 

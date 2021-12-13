@@ -25,7 +25,7 @@ const Header = () => {
   return (
     <div className="header">
       <div className="header-container">
-        <Link className="header__title" to="/github-profiles">
+        <Link className="header__title" to="/">
           GitHub profiles
         </Link>
         <div className="header__button-container">
