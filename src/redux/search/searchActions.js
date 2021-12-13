@@ -58,14 +58,10 @@ export function searchProfile(name) {
       .then((json) => {
         dispatch({ type: SEARCH_PROFILE, profile: json });
         dispatch(hideSearchLoader());
-
-        console.log(json);
       })
       .catch((err) => {
         dispatch(hideSearchLoader());
         dispatch(showSearchError(err));
-
-        console.log(err);
       });
   };
 }

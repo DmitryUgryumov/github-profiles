@@ -1,13 +1,7 @@
 export const SEARCH_REPOS = "REPOS/SEARCH_REPOS";
-
-// export const SHOW_LOADER = "REPOS/SHOW_LOADER";
 export const HIDE_LOADER = "REPOS/HIDE_LOADER";
-
 export const SHOW_ERROR = "REPOS/SHOW_ERROR";
 export const HIDE_ERROR = "REPOS/HIDE_ERROR";
-
 export const GET_REPOS_URL = "REPOS/GET_REPOS_URL";
-
 export const CLEAR_REPOS_STATE = "REPOS/CLEAR_STATE";
-
 export const SORTED_REPOS = "REPOS/SORTED_REPOS";

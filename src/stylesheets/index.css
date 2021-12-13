@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
 * {
   margin: 0;
@@ -38,6 +37,9 @@ body.dark .loader .lds-ring div {
 }
 body.dark .header {
   background: #000000FF;
+}
+body.dark .header__title {
+  color: #FFFF;
 }
 body.dark .header__circle {
   background: #FFFF;
@@ -89,6 +91,9 @@ body.light .loader .lds-ring div {
 body.light .header {
   background: #e8e3e3;
 }
+body.light .header__title {
+  color: #000000FF;
+}
 body.light .header__circle {
   background: #000000FF;
   transition: all 1s;
@@ -126,6 +131,11 @@ body.light .repos__title a {
 
 .header {
   width: 100%;
+}
+.header__title {
+  font-size: 34px;
+  font-weight: 700;
+  text-decoration: none;
 }
 .header__button-container {
   position: relative;

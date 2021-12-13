@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 $color-black: #000000FF;
@@ -13,7 +12,6 @@ $color-white: #FFFF;
   padding: 0;
   list-style: none;
   box-sizing: border-box;
-  //font-family: 'Roboto', sans-serif;
   font-family: 'Open Sans', sans-serif;
 
   button {
@@ -56,6 +54,10 @@ body.dark {
 
   .header {
     background: $color-black;
+
+    &__title {
+      color: $color-white;
+    }
   }
 
   .header__circle{
@@ -127,6 +129,10 @@ body.light {
 
   .header {
     background: $color-light-gray;
+
+    &__title {
+      color: $color-black;
+    }
   }
 
   .header__circle{
@@ -178,6 +184,14 @@ body.light {
 
 .header {
   width: 100%;
+
+  &__title {
+    font-size: 34px;
+    font-weight: 700;
+    text-decoration: none;
+
+  }
+
   &__button-container {
     position: relative;
     width: 50px;
@@ -186,7 +200,7 @@ body.light {
     background: $color-gray;
   }
 
-  &__circle{
+  &__circle {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -199,7 +213,6 @@ body.light {
   }
 
   &__circle_active {
-    //background: $color-black;
     left:100%;
     margin-left: -20px;
   }
@@ -224,14 +237,12 @@ body.light {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
-    //border: 1px red solid;
   }
 
   &__input {
     border: none;
     width: 30%;
     padding: 6px 5px;
-    //transition: background-color .5s;
     outline: none;
     font-size: 18px;
 
@@ -354,6 +365,7 @@ body.light {
     width: 80px;
     height: 80px;
   }
+
   .lds-ring {
     div {
       box-sizing: border-box;
@@ -367,15 +379,22 @@ body.light {
     }
 
   }
-  .lds-ring div:nth-child(1) {
-    animation-delay: -0.45s;
+
+  .lds-ring  {
+    div:nth-child(1) {
+      animation-delay: -0.45s;
+    }
+
+    div:nth-child(2) {
+      animation-delay: -0.3s;
+    }
+
+    div:nth-child(3) {
+      animation-delay: -0.15s;
+    }
+
   }
-  .lds-ring div:nth-child(2) {
-    animation-delay: -0.3s;
-  }
-  .lds-ring div:nth-child(3) {
-    animation-delay: -0.15s;
-  }
+
   @keyframes lds-ring {
     0% {
       transform: rotate(0deg);
@@ -386,7 +405,6 @@ body.light {
   }
 
 }
-
 
 @media(max-width: 980px) {
   .search {
@@ -404,11 +422,6 @@ body.light {
 
     &__list {
       margin-top: 10px;
-      //font-size: 18px;
-    }
-
-    &__span {
-      //font-size: 16px;
     }
   }
 }
@@ -437,8 +450,6 @@ body.light {
     &__select {
       margin-top: 10px;
     }
-
-
   }
 
   .repos {
@@ -452,4 +463,3 @@ body.light {
     }
   }
 }
-

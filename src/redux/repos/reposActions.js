@@ -62,7 +62,6 @@ export function searchRepos(reposURL) {
       .then((json) => {
         dispatch({ type: SEARCH_REPOS, repos: json });
         dispatch(hideReposLoader());
-        console.log(json);
       })
       .catch((err) => {
         dispatch(hideReposLoader());

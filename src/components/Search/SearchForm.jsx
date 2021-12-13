@@ -1,5 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   changeValue,
   clearProfile,
@@ -12,7 +13,7 @@ const SearchForm = () => {
   const inputValue = useSelector((state) => state.search.value);
   const error = useSelector((state) => state.search.error);
 
-  const formHandler = (e) => {
+  const getProfile = (e) => {
     e.preventDefault();
 
     if (!inputValue.trim()) {
@@ -22,7 +23,7 @@ const SearchForm = () => {
     dispatch(searchProfile(inputValue));
   };
 
-  const inputHandler = (e) => dispatch(changeValue(e.target.value));
+  const changeSearchValue = (e) => dispatch(changeValue(e.target.value));
 
   const clearState = () => {
     dispatch(changeValue(""));
@@ -34,13 +35,13 @@ const SearchForm = () => {
   };
 
   return (
-    <form className="search__form " onSubmit={formHandler}>
+    <form className="search__form " onSubmit={getProfile}>
       <input
         className="search__input"
         placeholder="введите логин пользователя"
         type="text"
         value={inputValue}
-        onChange={inputHandler}
+        onChange={changeSearchValue}
       />
       <button className="search__button" type="button" onClick={clearState}>
         Сбросить

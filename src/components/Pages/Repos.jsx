@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+
 import {
   clearReposState,
   getReposURL,
-  hideReposError,
   searchRepos,
 } from "../../redux/repos/reposActions";
+
 import ReposList from "../Repos/ReposList";
 import PageLoader from "../UI/Loaders/PageLoader";
 
