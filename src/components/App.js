@@ -13,7 +13,7 @@ function App() {
       <Header />
 
       <Switch>
-        <Route exact path="/">
+        <Route exact path="/github-profiles">
           <Search />
         </Route>
         <Route path="/repos/:login">
